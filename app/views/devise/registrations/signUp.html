@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Sidn Up</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="bootstrap.min.css" rel="stylesheet">
+	</head>
+<body> 
+<div id="wrap">  
+
+ 	<header>
+ 		<div class="container">
+
+  			<div id="logo">
+                <%=image_tag("logo.png")%>
+  				<a href="index.html"><img src="images/logo.png" height="130px" width="130px"></a>
+  			</div>
+			
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Library</a></li>
+				</ul>
+			</div>
+
+			<div class="autorisation">
+        <a href="signIn.html"><img src="images/ico_enter.png"></a>
+        <a href="signUp.html"><img src="images/ico_reg.png"></a>
+      </div>
+		</div>
+  	</header>
+
+    <div class="regForm" align="center">
+      <div class="container">
+        <h1>Registration</h1>
+        <form action="#" method="post" name="signUp">
+          <input type="text" name="firstName" placeholder="First Name">
+          <input type="text" name="lastName" placeholder="Last Name"> 
+          <input type="text" name="year" placeholder="Year of birth"><br>
+          <input type="email" name="e-mail" placeholder="E-mail"> <br>
+          <input type="text" name="phone" placeholder="Phone"> <br>
+          <input type="password" name="password" placeholder="Password"> <br>
+          <input type="password" name="conf_pass" placeholder="Confirm password"> <br>
+          <button type="submit" class="btn btn-success">SUBMIT</button>
+        </form>
+      </div>
+    </div>
+
+  	<footer>
+  		<div class="container">
+  			<hr>
+  			<img src="images/ico_logo.png" id="ico_logo">
+  			<div id="social">
+  				<img src="images/ico_tw.png" id="ico_tw">
+  				<img src="images/ico_google+.png" id="ico_google">
+  				<img src="images/ico_fb.png" id="ico_fb">
+  			</div>
+  		</div>
+  	</footer>
+</div> 
+</body>
+</html>
