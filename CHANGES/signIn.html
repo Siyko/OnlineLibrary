@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Log In</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+	</head>
+<body> 
+<div id="wrap">  
+
+ 	<header>
+ 		<div class="container">
+
+  			<div id="logo">
+  				<a href="index.html"><img src="images/logo.png" height="130px" width="130px"></a>
+          <%= image_tag ("logo.png") %>
+  			</div>
+			
+			<div class="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Library</a></li>
+				</ul>
+			</div>
+
+			<div class="autorisation">
+        <a href="signUp.html"><img src="images/ico_reg.png"></a>
+        <%= image_tag ("ico_reg.png") %>
+      </div>
+		</div>
+  	</header>
+
+    <div class="regForm">
+        <h1>Log in</h1>
+        <form action="#" method="post" name="logIn">
+          <input type="email" name="e-mail" placeholder="E-mail"> <br>
+          <input type="password" name="password" placeholder="Password"> <br>
+          <input type="checkbox" class="checks"> <span>Remember me</span> 
+          <a href="#">Forgot your password?</a>
+          <br>
+          <div class="logWith">Log in with: 
+            <img src="images/reg_google.png">
+            <%= image_tag ("reg_google.png") %>
+            <img src="images/reg_fb.png">
+            <%= image_tag ("reg_fb.png") %>
+          </div>
+          <button type="submit" class="btn btn-success">LOG IN</button><br>
+          
+        </form>
+
+
+    </div>
+
+  	<footer>
+  		<div class="container">
+  			<hr>
+  			<img src="images/ico_logo.png" id="ico_logo">
+        <%= image_tag ("ico_logo.png") %>
+        <div id="social">
+          <img src="images/ico_tw.png" id="ico_tw">
+          <%= image_tag ("ico_tw.png") %>
+          <img src="images/ico_google.png" id="ico_google">
+          <%= image_tag ("ico_google.png") %>
+          <img src="images/ico_fb.png" id="ico_fb">
+          <%= image_tag ("ico_fb.png") %>
+        </div>
+  		</div>
+  	</footer>
+</div> 
+</body>
+</html>

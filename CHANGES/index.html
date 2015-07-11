@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Home</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "style", "css/bootstrap.min" %>
+
+	</head>
+<body> 
+<div id="wrap">  
+
+ 	<header id="head">
+ 		<div class="container">
+
+  			<div id="logo">
+  				<a href="#"><img src="images/logo.png" height="130px" width="130px"></a>
+          <%= image_tag ("logo.png") %>
+  			</div>
+			
+			<div class="nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Library</a></li>
+				</ul>
+			</div>
+
+			<div class="autorisation">
+				<a href="signIn.html"><img src="images/ico_enter.png"></a>
+        <%= image_tag ("ico_enter.png") %>
+				<a href="signUp.html"><img src="images/ico_reg.png"></a>
+        <%= image_tag ("ico_reg.png") %>
+			</div>
+		</div>
+  	</header>
+
+  	<div class="sliderbox">
+  		<div class="container">
+  			<ul class="slider">
+  				<li>
+  					<div class="slide">
+  						<h4>Lorem ipsum dolor sit amet</h4>
+  						<p>
+  							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
+  						</p>	
+  					</div>
+  					<img src="images/slide-1.jpg" alt="slide-1">
+            <%= image_tag ("slide-1.jpg") %>
+  				</li>
+  			</ul>
+   		</div>
+  	</div>
+
+  	<div class="books">
+  		<div class="container">
+
+  			<div class="book">
+  				<img src="images/book-1.jpg">
+          <%= image_tag ("book-1.jpg") %>
+  				<h4>Lorem ipsum dolor sit amet</h4>
+  				<p>
+  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
+  				</p>	
+  			</div>
+
+  			<div class="book">
+  				<img src="images/book-2.jpg">
+          <%= image_tag ("book-2.jpg") %>
+  				<h4>Lorem ipsum dolor sit amet</h4>
+  				<p>
+  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
+  				</p>	
+  			</div>
+
+  			<div class="book">
+  				<img src="images/book-3.jpg">
+          <%= image_tag ("book-3.jpg") %>
+  				<h4>Lorem ipsum dolor sit amet</h4>
+  				<p>
+  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
+  				</p>	
+  			</div>
+
+  		</div>
+  	</div>
+
+  	<footer id="foot">
+  		<div class="container">
+  			<hr>
+  			<img src="images/ico_logo.png" id="ico_logo">
+        <%= image_tag ("ico_logo.png") %>
+  			<div id="social">
+  				<img src="images/ico_tw.png" id="ico_tw">
+          <%= image_tag ("ico_tw.png") %>
+  				<img src="images/ico_google.png" id="ico_google">
+          <%= image_tag ("ico_google.png") %>
+  				<img src="images/ico_fb.png" id="ico_fb">
+          <%= image_tag ("ico_fb.png") %>
+  			</div>
+  		</div>
+  	</footer>
+</div> 
+</body>
+</html>
