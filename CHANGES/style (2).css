@@ -1,0 +1,260 @@
+@font-face {					/*     changes       */
+    font-family: 'SegoeUI';
+    src: url('fonts/SegoeUI.eot?') format('eot'),
+         url('fonts/SegoeUI.otf')  format('opentype'),
+         url('fonts/SegoeUI.woff') format('woff'), 
+         url('fonts/SegoeUI.woff2') format('woff2'), 
+         url('fonts/SegoeUI.ttf')  format('truetype'),
+         url('fonts/SegoeUI.svg#segoe_ui') format('svg');
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
+a, abbr, acronym, address, big, cite, code, 
+del, dfn, em, img, ins, kbd, q, 
+s, samp, small, strike, strong, sub, sup, 
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header,  menu, nav, 
+output, ruby, section, summary, time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} 
+
+html{
+	height: 100%;
+}
+
+body{
+	height: 100%;
+	font: 18px SegoeUI, sans-serif;
+}
+
+ol, ul{
+	list-style: none;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a, a:hover{
+	text-decoration: none;
+}
+
+h1 span{
+	font-weight: 600;
+}
+
+/*                   changes                  */
+/*
+.clearfix:before, .clearfix:after{
+	content: " ";
+	display: table;
+}
+
+.clearfix:after{
+	clear: both;
+}
+
+.container{
+	width: 1100px;
+	margin: 0 auto;
+}
+*/
+
+
+/**********     HEADER     *******/
+
+#head {						/*       changes      */
+	padding: 20px 0;
+	height: 175px;
+}
+
+#logo {
+	float: left;
+}
+
+.nav{
+	float: left;
+	margin-top: 50px;
+}
+
+.nav li{
+	float: left;
+	margin-left: 50px;
+}
+
+.nav a{
+	color: #000;
+	font-size: 22px;
+}
+
+.nav a:hover{
+	color: #0AC;
+}
+
+.autorisation{
+	float: right;
+	margin-top: 45px;
+}
+
+.autorisation img{
+	margin-left: 15px;
+}
+							/*******         CHANGES       ********/
+.logged{
+	float: right;
+	margin-top: 52px;
+}
+
+.logged span{
+	font-size: 18px;
+}
+
+.logged img{
+	margin-left: 10px;
+}
+
+/**********      SLIDER     **********/
+
+.sliderbox{
+	height: 585px;
+}
+
+.slide{
+	position: absolute;
+	width: 775px;
+	height: 160px;
+	background-color: #fff;
+	opacity: 0.8;
+	margin-top: 400px;
+}
+
+.slide h4{						/*      changes       */
+	font-weight: bold;
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+.slide p{
+	margin-left: 20px;
+	margin-right: 110px;
+}
+
+
+/*********     BOOKS      ***********/
+
+.book{
+	float: left;
+	margin-right: 90px;
+	width: 320px;
+	height: 475px;
+	font-size: 18px;
+}
+
+.book:last-child{
+	margin-right: 0;
+}
+
+.book h4{					/*      changes       */
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+
+
+
+/**********    FOOTER     *******/
+
+hr{
+	border: 1px solid #000;
+	margin-top: 40px;
+	margin-bottom: 40px; 
+}
+
+#ico_logo{
+	float: left;
+}
+
+#social{
+	float: right;
+}
+
+
+
+/*********************************/
+/**********************************      changes     ****/
+/*********************************/
+
+/**********  SidnUp  *************/
+.regForm {
+	height: 550px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.regForm h1{
+	padding-bottom: 50px;
+	text-align: center;
+}
+
+.regForm input{
+	border: 1px solid #C0C0C0;
+	border-radius: 5px;
+	height: 45px;
+	width: 600px;
+	margin-bottom: 20px;
+	padding: 0 20px 0 20px;
+}
+
+input[name="firstName"],
+input[name="lastName"] {
+	width: 230px;
+	margin-right: 5px; 
+}
+
+input[name="year"]{
+	width: 120px;
+}
+
+.regForm .checks{
+	width: auto;
+	height: auto;
+}
+
+
+
+.regForm .btn{
+	font-weight: bold;
+	background-color: #6e9d14;
+	height: 45px;
+	width: 250px;
+	float: right;
+	margin-top: 30px;
+	
+}
+
+
+
+
+.regWith,
+.logWith{
+	position: absolute;				
+	float: left;	
+	margin-top: 25px;
+}

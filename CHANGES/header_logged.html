@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<title>Home</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag "style", "css/bootstrap.min" %>
+
+	</head>
+<body> 
+<div id="wrap">  
+
+ 	<header id="head">
+ 		<div class="container">
+
+  			<div id="logo">
+  				<a href="#"><img src="images/logo.png" height="130px" width="130px"></a>
+    		    <%= image_tag ("logo.png") %> 
+  			</div>
+			
+			<div class="nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About us</a></li>
+					<li><a href="#">Library</a></li>
+				</ul>
+			</div>
+<!--
+			<div class="autorisation">
+				<a href="signIn.html"><img src="images/ico_enter.png"></a>
+        <%= image_tag ("ico_enter.png") %>
+				<a href="signUp.html"><img src="images/ico_reg.png"></a>
+        <%= image_tag ("ico_reg.png") %>
+			</div>
+-->
+			<div class="logged">
+				<span>Hi, <a href="#">UserName</a></span>  <!-- account link -->
+				<img src="images/ico_out.png">
+				<%= image_tag ("ico_out.png") %>
+			</div>
+		</div>
+  	</header>
+
+</div>
+</body>
