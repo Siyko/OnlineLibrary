@@ -33,7 +33,7 @@ html{
 
 body{
 	height: 100%;
-	font: 18px SegoeUI, sans-serif;
+	font: 18px 'SegoeUI', sans-serif;
 }
 
 ol, ul{
@@ -59,33 +59,20 @@ h1 span{
 	font-weight: 600;
 }
 
-/*                   changes                  */
-/*
-.clearfix:before, .clearfix:after{
-	content: " ";
-	display: table;
-}
 
-.clearfix:after{
-	clear: both;
-}
-
-.container{
-	width: 1100px;
-	margin: 0 auto;
-}
-*/
 
 
 /**********     HEADER     *******/
 
-#head {						/*       changes      */
+#head {						
 	padding: 20px 0;
 	height: 175px;
 }
 
 #logo {
 	float: left;
+	width: 130px;
+	height: 130px;
 }
 
 .nav{
@@ -116,66 +103,39 @@ h1 span{
 	margin-left: 15px;
 }
 
-/**********      SLIDER     **********/
-
-.sliderbox{
-	height: 585px;
+.logged{
+	float: right;
+	margin-top: 52px;
 }
 
-.slide{
-	position: absolute;
-	width: 775px;
-	height: 160px;
-	background-color: #fff;
-	opacity: 0.8;
-	margin-top: 400px;
-}
-
-.slide h4{						/*      changes       */
-	font-weight: bold;
-	margin-top: 25px;
-	margin-left: 20px;
-}
-
-.slide p{
-	margin-left: 20px;
-	margin-right: 110px;
-}
-
-
-/*********     BOOKS      ***********/
-
-.book{
-	float: left;
-	margin-right: 90px;
-	width: 320px;
-	height: 475px;
+.logged span{
 	font-size: 18px;
 }
 
-.book:last-child{
-	margin-right: 0;
+.logged img{
+	margin-left: 10px;
 }
-
-.book h4{					/*      changes       */
-	font-weight: bold;
-	margin-top: 5px;
-	margin-bottom: 10px;
-}
-
 
 
 
 /**********    FOOTER     *******/
 
+#foot{
+	margin-bottom: 15px;
+}
 hr{
 	border: 1px solid #000;
 	margin-top: 40px;
 	margin-bottom: 40px; 
 }
 
-#ico_logo{
+.ico_logo, #ico_logo{
 	float: left;
+}
+
+.ico_logo p{
+	width: 300px;
+	font-size: 14px;
 }
 
 #social{
@@ -183,24 +143,89 @@ hr{
 }
 
 
+/***************************************************************************************************************************/
+/************* MAIN PAGE ********************/
 
-/*********************************/
-/**********************************      changes     ****/
-/*********************************/
 
-/**********  SidnUp  *************/
+/**********      SLIDER     **********/
+
+.cont-slide{
+	margin-bottom: 15px;
+}
+
+.slide-control{
+	left: auto;
+	width: 5%;
+}
+
+
+.slide-item{
+	position: absolute;
+	font-size: 1em;
+	background-color: #000;
+	opacity: 0.8;
+}
+
+
+/*********     BOOKS      ***********/
+
+.books{
+	text-align: center;
+}
+
+.book{
+	display: inline-block;
+	/*margin: 0 auto;*/
+	height: 475px;
+}
+/*
+.book img{
+	width: 100%;
+}
+*/
+.book p,
+.book h4{
+	width: 320px;
+	margin: 0 auto;
+	font-size: 18px;
+	text-align: left;
+}
+
+.book h4{					/*      changes       */
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	
+}
+
+.books a{
+	color: #000;
+}
+
+
+/****************************************************************************************************************/
+/**********  SidnUp  + Log In *************/
 .regForm {
 	height: 550px;
 	width: 600px;
 	margin: 0 auto;
 }
 
-.regForm h1{
-	padding-bottom: 50px;
-	text-align: center;
+.logForm{
+	height: 350px;
+	width: 600px;
+	margin: 0 auto;
 }
 
-.regForm input{
+.regForm h1,
+.logForm h1{
+	padding-bottom: 50px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.regForm input,
+.logForm input{
 	border: 1px solid #C0C0C0;
 	border-radius: 5px;
 	height: 45px;
@@ -209,26 +234,22 @@ hr{
 	padding: 0 20px 0 20px;
 }
 
-input[name="firstName"],
-input[name="lastName"] {
+.regForm .nameInput{
 	width: 230px;
 	margin-right: 5px; 
 }
 
-input[name="year"]{
+.regForm .year{
 	width: 120px;
 }
 
-.regForm .checks{
+.logForm .checks{
 	width: auto;
 	height: auto;
 }
 
-.regForm  a{
-	float: right;
-}
-
-.regForm .btn{
+.regForm .btn,
+.logForm .btn{
 	font-weight: bold;
 	background-color: #6e9d14;
 	height: 45px;
@@ -239,11 +260,15 @@ input[name="year"]{
 }
 
 
-
-
 .regWith,
 .logWith{
 	position: absolute;				
 	float: left;	
 	margin-top: 25px;
 }
+
+.regForm img,
+.logForm img{
+	vertical-align: middle;
+}
+

@@ -4,9 +4,9 @@
 
 		<title>Sidn Up</title>
 		<meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="style.css" type="text/css">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-    <%= stylesheet_link_tag "style", "css/bootstrap.min.css" %>
+<!--    <%= stylesheet_link_tag "style", "css/bootstrap.min.css" %>  -->
 	</head>
 <body> 
 <div id="wrap">  
@@ -16,20 +16,20 @@
 
   			<div id="logo">
   				<a href="index.html"><img src="images/logo.png" height="130px" width="130px"></a>
-          <%= image_tag ("logo.png") %>
+      <!--    <%= image_tag ("logo.png") %>   -->
   			</div>
 			
-			<div class="nav">
+			<nav class="nav">
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="#">About us</a></li>
 					<li><a href="#">Library</a></li>
 				</ul>
-			</div>
+			</nav>
 
 			<div class="autorisation">
         <a href="signIn.html"><img src="images/ico_enter.png"></a>
-        <%= image_tag ("ico_enter.png") %>
+    <!--    <%= image_tag ("ico_enter.png") %>   -->
       </div>
 		</div>
   	</header>
@@ -37,18 +37,16 @@
     <div class="regForm" align="center">
         <h1>Registration</h1>
         <form action="#" method="post" name="signUp">
-          <input type="text" name="firstName" placeholder="First Name">
-          <input type="text" name="lastName" placeholder="Last Name"> 
-          <input type="text" name="year" placeholder="Year of birth"><br>
+          <input type="text" name="firstName" placeholder="First Name" class="nameInput">
+          <input type="text" name="lastName" placeholder="Last Name" class="nameInput"> 
+          <input type="text" name="year" placeholder="Age" class="year"><br>
           <input type="email" name="e-mail" placeholder="E-mail"> <br>
           <input type="text" name="phone" placeholder="Phone"> <br>
           <input type="password" name="password" placeholder="Password"> <br>
           <input type="password" name="conf_pass" placeholder="Confirm password"> <br>
           <div class="regWith">Registration with: 
             <img src="images/reg_google.png">
-            <%= image_tag ("reg_google.png") %>
             <img src="images/reg_fb.png">
-            <%= image_tag ("reg_fb.png") %>
           </div>
           <button type="submit" class="btn btn-success">SUBMIT</button>
         </form>
@@ -57,15 +55,22 @@
   	<footer id="foot">
   		<div class="container">
   			<hr>
-  			<img src="images/ico_logo.png" id="ico_logo">
-        <%= image_tag ("ico_logo.png") %>
+           <div class="ico_logo">
+        <img src="images/ico_logo.png" id="ico_logo">
+<!--        <%= image_tag ("ico_logo.png") %>  -->
+          <p>
+            LinkUp Studio<br>
+            all rights reserved
+          </p>
+        </div>
+
         <div id="social">
-          <img src="images/ico_tw.png" id="ico_tw">
-          <%= image_tag ("ico_tw.png") %>
-          <img src="images/ico_google.png" id="ico_google">
-          <%= image_tag ("ico_google.png") %>
-          <img src="images/ico_fb.png" id="ico_fb">
-          <%= image_tag ("ico_fb.png") %>
+          <a href="#"><img src="images/ico_tw.png" id="ico_tw"></a>
+<!--          <%= image_tag ("ico_tw.png") %>  -->
+          <a href="#"><img src="images/ico_google.png" id="ico_google"></a>
+<!--          <%= image_tag ("ico_google.png") %>  -->
+          <a href="#"><img src="images/ico_fb.png" id="ico_fb"></a>
+<!--          <%= image_tag ("ico_fb.png") %>  -->
         </div>
   		</div>
   	</footer>
