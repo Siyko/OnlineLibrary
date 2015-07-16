@@ -6,6 +6,37 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<header id="head">
+  <div class="container">
+
+    <div id="logo">
+
+      <%= image_tag ("logo.png") %>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><%=link_to 'Home',root_path%>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Library</a></li>
+      </ul>
+    </nav>
+
+    <% if user_signed_in? %>
+        <div class="logged">
+        Logged in as <strong><%= current_user.name %></strong>.
+
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+          </div>
+    <% else %>
+        <div class="autorisation">
+          <%= link_to (image_tag ("ico_reg.png")),new_user_registration_path %>
+          <%= link_to (image_tag ("ico_enter.png")), new_user_session_path %>
+        </div>
+        <%end%>
+
+  </div>
+</header>
 <body>
 
 <%= yield %>

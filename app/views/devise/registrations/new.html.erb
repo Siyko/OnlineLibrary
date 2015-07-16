@@ -1,41 +1,51 @@
-<h2>Sign up</h2>
+<!DOCTYPE html>
+<html>
+<head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <title>Sign Up</title>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag 'bootstrap.min.css', 'style' %>
+</head>
+<body>
+<div id="wrap">
+  <div class="regForm" >
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+      <h1>Registration</h1>
+      <%=form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <%= f.text_field :name, :class=>'nameInput',:placeholder=>'First Name' %>
+          <%= f.text_field :surname,:class=>'nameInput',:placeholder=>'Last Name' %>
+          <%= f.text_field :age, :class=>'year', :placeholder=>'Age'%><br>
+
+          <%= f.text_field :number,:placeholder=>'Telephone Number'%><br>
+          <%= f.email_field :email, :placeholder=>'Email'%><br>
+          <% if @validatable %>
+              <%= f.password_field :password, autocomplete: "off", :placeholder=>'Password( '+@minimum_password_length.to_s+'characters minimum)'%><br>
+          <% else %>
+              <%= f.password_field :password, autocomplete: "off" %><br>
+          <%end%>
+          <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder=>'Password Confirmation' %><br>
+          <div class="regWith">Registration with:
+            <%= link_to (image_tag ("reg_google.png")),user_omniauth_authorize_path(:google_oauth2) %>
+            <%= link_to (image_tag ("reg_fb.png")),user_omniauth_authorize_path(:facebook) %>
+          </div>
+          <%= f.submit "Sign up" ,:class=>'btn btn-success'%>
+
+      <% end %>
+
   </div>
-    <div class="field">
-      <%= f.label :surname %><br />
-      <%= f.text_field :surname, autofocus: true %>
+  <footer>
+    <div class="container">
+      <hr>
+      <%=image_tag("ico_logo.png")%>
+      <div id="social">
+        <%=image_tag("ico_tw.png")%>
+        <%=image_tag("ico_google.png")%>
+        <%=image_tag("ico_fb.png")%>
+      </div>
     </div>
-    <div class="field">
-      <%= f.label :number %><br />
-      <%= f.text_field :number, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </footer>
+</div>
+</body>
+</html>

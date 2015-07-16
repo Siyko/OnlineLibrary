@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150709093456) do
+ActiveRecord::Schema.define(version: 20150716094058) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -23,15 +23,23 @@ ActiveRecord::Schema.define(version: 20150709093456) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
-    t.integer  "year"
+    t.date     "year"
     t.text     "publication"
     t.integer  "download_count"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "book_rating"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "author_id"
+    t.integer  "genre_id"
+    t.string   "book_image_file_name"
+    t.string   "book_image_content_type"
+    t.integer  "book_image_file_size"
+    t.datetime "book_image_updated_at"
+    t.text     "description"
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
+  add_index "books", ["genre_id"], name: "index_books_on_genre_id"
 
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -47,10 +55,7 @@ ActiveRecord::Schema.define(version: 20150709093456) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "book_id"
   end
-
-  add_index "genres", ["book_id"], name: "index_genres_on_book_id"
 
   create_table "histories", force: :cascade do |t|
     t.date     "download_date"
@@ -63,17 +68,24 @@ ActiveRecord::Schema.define(version: 20150709093456) do
   add_index "histories", ["book_id"], name: "index_histories_on_book_id"
   add_index "histories", ["user_id"], name: "index_histories_on_user_id"
 
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
   create_table "reviews", force: :cascade do |t|
     t.text     "comment"
     t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "reviews", ["book_id"], name: "index_reviews_on_book_id"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

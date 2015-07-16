@@ -1,26 +1,65 @@
-<h2>Log in</h2>
+<!DOCTYPE html>
+<html>
+<head>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <title>Log In</title>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag 'bootstrap.min.css', 'style' %>
+</head>
+<body>
+<div id="wrap">
+  <div class="regForm">
+    <h1>Log in</h1>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= f.email_field :email, autofocus: true, :placeholder=>'Email'%>
+          <%= f.password_field :password, autocomplete: "off",:placeholder=>'Password' %>
+        <% if devise_mapping.rememberable? %>
+              <%= f.check_box :remember_me,:class=>"checks" %>
+            <span>Remember me</span>
+        <% end %>
+        <br>
+        <%=link_to "Forgot your password?", new_password_path(resource_name)%>
+        <br>
+        <div class="logWith">Log in with:
+
+          <%= link_to (image_tag ("reg_google.png")),user_omniauth_authorize_path(:google_oauth2) %>
+
+          <%= link_to (image_tag ("reg_fb.png")),user_omniauth_authorize_path(:facebook) %>
+        </div>
+          <%= f.submit "Log in",:class=>'btn btn-success'%>
+    <% end %>
+    <!--h1>Log in</h1>
+    <form action="#" method="post" name="logIn">
+      <input type="email" name="e-mail" placeholder="E-mail"> <br>
+      <input type="password" name="password" placeholder="Password"> <br>
+      <input type="checkbox" class="checks"> <span>Remember me</span>
+      <a href="#">Forgot your password?</a>
+      <br>
+      <div class="logWith">Log in with:
+      </div>
+      <button type="submit" class="btn btn-success">LOG IN</button><br>
+
+    </form-->
+
+
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <footer>
+    <div class="container">
+      <hr>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= image_tag ("ico_logo.png") %>
+      <div id="social">
+
+        <%= image_tag ("ico_tw.png") %>
+
+        <%= image_tag ("ico_google.png") %>
+
+        <%= image_tag ("ico_fb.png") %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  </footer>
+</div>
+</body>
+</html>

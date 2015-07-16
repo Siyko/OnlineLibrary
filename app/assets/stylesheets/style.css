@@ -1,225 +1,273 @@
-@font-face {
-    font-family: "SegoeUIRegular";
-    src: url("./fonts/SegoeUIRegular/SegoeUIRegular.eot");
-    src: url("./fonts/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
-    url("./fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
-    url("./fonts/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
+@font-face {					/*     changes       */
+    font-family: 'SegoeUI';
+    src: url('fonts/SegoeUI.eot?') format('eot'),
+    url('fonts/SegoeUI.otf')  format('opentype'),
+    url('fonts/SegoeUI.woff') format('woff'),
+    url('fonts/SegoeUI.woff2') format('woff2'),
+    url('fonts/SegoeUI.ttf')  format('truetype'),
+    url('fonts/SegoeUI.svg#segoe_ui') format('svg');
 }
 
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, 
-a, abbr, acronym, address, big, cite, code, 
-del, dfn, em, img, ins, kbd, q, 
-s, samp, small, strike, strong, sub, sup, 
-tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
-fieldset, form, label, legend, 
-table, caption, tbody, tfoot, thead, tr, th, td, 
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, menu, nav, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup,
+tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,  menu, nav,
 output, ruby, section, summary, time, mark, audio, video{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-} 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
 
 html{
-	height: 100%;
+    height: 100%;
 }
 
 body{
-	height: 100%;
-	font: 18px "SegoeUIRegular", sans-serif;
+    height: 100%;
+    font: 18px 'SegoeUI', sans-serif;
 }
 
 ol, ul{
-	list-style: none;
+    list-style: none;
 }
 
 *{
-	margin: 0;
-	padding: 0;
-	border: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a, a:hover{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 h1 span{
-	font-weight: 600;
+    font-weight: 600;
 }
 
-.clearfix:before, .clearfix:after{
-	content: " ";
-	display: table;
-}
-
-.clearfix:after{
-	clear: both;
-}
-
-.container{
-	width: 1100px;
-	margin: 0 auto;
-}
 
 
 
 /**********     HEADER     *******/
 
-header {
-	width: 100%;
-	padding: 20px 0;
-	height: 175px;
+#head {
+    padding: 20px 0;
+    height: 175px;
 }
 
 #logo {
-	float: left;
+    float: left;
+    width: 130px;
+    height: 130px;
 }
 
 .nav{
-	float: left;
-	margin-top: 50px;
+    float: left;
+    margin-top: 50px;
 }
 
 .nav li{
-	float: left;
-	margin-left: 50px;
+    float: left;
+    margin-left: 50px;
 }
 
 .nav a{
-	color: #000;
-	font-size: 22px;
+    color: #000;
+    font-size: 22px;
 }
 
 .nav a:hover{
-	color: #0AC;
+    color: #0AC;
 }
 
 .autorisation{
-	float: right;
-	margin-top: 45px;
+    float: right;
+    margin-top: 45px;
 }
 
 .autorisation img{
-	margin-left: 15px;
+    margin-left: 15px;
 }
 
-/**********      SLIDER     **********/
-
-.sliderbox{
-	height: 585px;
+.logged{
+    float: right;
+    margin-top: 52px;
 }
 
-.slide{
-	position: absolute;
-	width: 775px;
-	height: 160px;
-	background-color: #fff;
-	opacity: 0.8;
-	margin-top: 400px;
+.logged span{
+    font-size: 18px;
 }
 
-.slide h3{
-	font-weight: bold;
-	margin-top: 25px;
-	margin-left: 20px;
+.logged img{
+    margin-left: 10px;
 }
-
-.slide p{
-	margin-left: 20px;
-	margin-right: 110px;
-}
-
-
-/*********     BOOKS      ***********/
-
-.book{
-	float: left;
-	margin-right: 90px;
-	width: 320px;
-	height: 475px;
-	font-size: 18px;
-}
-
-.book:last-child{
-	margin-right: 0;
-}
-
-.book h3{
-	font-weight: bold;
-	margin-top: 5px;
-	margin-bottom: 10px;
-}
-
 
 
 
 /**********    FOOTER     *******/
 
+#foot{
+    margin-bottom: 15px;
+}
 hr{
-	border: 1px solid #000;
-	margin-top: 40px;
-	margin-bottom: 40px; 
+    border: 1px solid #000;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-#ico_logo{
-	float: left;
+.ico_logo, #ico_logo{
+    float: left;
+}
+
+.ico_logo p{
+    width: 300px;
+    font-size: 14px;
 }
 
 #social{
-	float: right;
+    float: right;
 }
 
 
+/***************************************************************************************************************************/
+/************* MAIN PAGE ********************/
 
-/*********************************/
-/*********************************/
-/*********************************/
 
-/**********  SidnUp  *************/
+/**********      SLIDER     **********/
+
+.cont-slide{
+    margin-bottom: 15px;
+}
+
+.slide-control{
+    left: auto;
+    width: 5%;
+}
+
+
+.slide-item{
+    position: absolute;
+    font-size: 1em;
+    background-color: #000;
+    opacity: 0.8;
+}
+
+
+/*********     BOOKS      ***********/
+
+.books{
+    text-align: center;
+}
+
+.book{
+    display: inline-block;
+    /*margin: 0 auto;*/
+    height: 475px;
+}
+/*
+.book img{
+	width: 100%;
+}
+*/
+.book p,
+.book h4{
+    width: 320px;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: left;
+}
+
+.book h4{					/*      changes       */
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+.books a{
+    color: #000;
+}
+
+
+/****************************************************************************************************************/
+/**********  SidnUp  + Log In *************/
 .regForm {
-	height: 550px;
+    height: 550px;
+    width: 600px;
+    margin: 0 auto;
 }
 
-.regForm h1{
-	padding-bottom: 50px;
+.logForm{
+    height: 350px;
+    width: 600px;
+    margin: 0 auto;
 }
 
-.regForm input{
-	border: 1px solid #C0C0C0;
-	border-radius: 5px;
-	height: 45px;
-	width: 600px;
-	margin-bottom: 20px;
-	padding: 0 20px 0 20px;
+.regForm h1,
+.logForm h1{
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
 }
 
-input[name="firstName"],
-input[name="lastName"] {
-	width: 230px;
-	margin-right: 5px; 
+.regForm input,
+.logForm input{
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    height: 45px;
+    width: 600px;
+    margin-bottom: 20px;
+    padding: 0 20px 0 20px;
 }
 
-input[name="year"]{
-	width: 123px;
+.regForm .nameInput{
+    width: 230px;
+    margin-right: 5px;
 }
 
-.regForm .btn{
-	font-weight: bold;
-	background-color: #6e9d14;
-	height: 45px;
-	width: 250px;
-	margin-left: 350px;
-	margin-top: 30px;
+.regForm .year{
+    width: 120px;
+}
+
+.logForm .checks{
+    width: auto;
+    height: auto;
+}
+
+.regForm .btn,
+.logForm .btn{
+    font-weight: bold;
+    background-color: #6e9d14;
+    height: 45px;
+    width: 250px;
+    float: right;
+    margin-top: 30px;
+
+}
+
+
+.regWith,
+.logWith{
+    position: absolute;
+    float: left;
+    margin-top: 25px;
+}
+
+.regForm img,
+.logForm img{
+    vertical-align: middle;
 }

@@ -3,7 +3,8 @@ class CreateReviews < ActiveRecord::Migration
     create_table :reviews do |t|
       t.text :comment
       t.integer :rating
-
+t.belongs_to :user
+t.belongs_to :book
       t.timestamps null: false
     end
   end

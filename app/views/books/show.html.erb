@@ -1,6 +1,17 @@
-<h1>asdas</h1>
-<%=@books.each do |b|%>
-<div>
+<h3>Book</h3>
+<p>
+  <strong>  Name:</strong>
+  <%= @book.name %>
+</p>
+<p>
+  <strong> Description:</strong>
+  <%= @book.description %>
+</p>
+<% if @book.reviews.empty? %>
+    <i>No comments</i>
+<% else %>
+    <i>Comments:</i>
+    <%= render @book.reviews %>
+<% end %>
 
-</div>
-<%end%>
+<%= render 'reviews/form' %>

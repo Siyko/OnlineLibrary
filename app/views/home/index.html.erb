@@ -4,96 +4,105 @@
 
 		<title>Home</title>
 		<meta charset="utf-8">
-      <%= stylesheet_link_tag "style", "bootstrap.min.css" %>
+      <%= stylesheet_link_tag  'bootstrap.min.css' %>
+      <%= stylesheet_link_tag  'style' %>
 
       <!--link rel="stylesheet" href="style.css" type="text/css"-->
       <!--link href="bootstrap.min.css" rel="stylesheet"-->
 	</head>
 <body> 
-<div id="wrap">  
+<div id="wrap">
 
- 	<header>
- 		<div class="container">
 
-  			<div id="logo">
-              <%=image_tag("logo.png")%>
-  			</div>
-			
-			<div class="nav">
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About us</a></li>
-					<li><a href="#">Library</a></li>
-				</ul>
-			</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="carousel-example-generic" class="carousel slide cont-slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <%@popular_books.each do %>
 
-			<div class="autorisation">
-              <%= link_to image_tag("ico_reg.png"), new_user_registration_path %> |
-              <%= link_to image_tag("ico_enter.png"), new_user_session_path %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%=@counter%>" <%if @counter == 0%>class="active"<%end%>>
+                <%@counter+=1%>
+           <%end%>
 
-			</div>
-		</div>
-  	</header>
 
-  	<div class="sliderbox">
-  		<div class="container">
-  			<ul class="slider">
-  				<li>
-  					<div class="slide">
-  						<h3>Lorem ipsum dolor sit amet</h3>
-  						<p>
-  							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
-  						</p>	
-  					</div>
-                  <%=image_tag("slide-1.jpg")%>
-  				</li>
-  			</ul>
-   		</div>
-  	</div>
 
-  	<div class="books">
-  		<div class="container">
+          </ol>
+          <!-- Обгортка для слайдів -->
+          <%@counter=0%>
+          <div class="carousel-inner" role="listbox">
+            <%@popular_books.each do |p|%>
+                <%if @counter == 0%>
+                    <div class="item active">
+                <%else%>
+                    <div class="item">
+                <%end%>
+              <%=image_tag(p.book_image.url(:original)) %>
 
-  			<div class="book">
-              <%=image_tag("book-1.jpg")%>
+              <div class="carousel-caption slide-item">
+                <h3><%=p.name%></h3>
+                <p>
+                  <%=p.description%>
+                </p>
+              </div>
+            </div>
+                <%@counter+=1%>
+            <%end%>
+          </div>
+          <!-- Управління -->
+          <a class="left carousel-control slide-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Prev</span>
+          </a>
+          <a class="right carousel-control slide-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  				<h3>Lorem ipsum dolor sit amet</h3>
-  				<p>
-  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
-  				</p>	
-  			</div>
 
-  			<div class="book">
-              <%=image_tag("book-2.jpg")%>
-  				<h3>Lorem ipsum dolor sit amet</h3>
-  				<p>
-  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
-  				</p>	
-  			</div>
+  <div class="container">
+    <div class="books row">
+      <%@new_books.each do |n|%>
+      <div class="book col-md-4 ">
+        <a href="#">
 
-  			<div class="book">
-              <%=image_tag("book-3.jpg")%>
-  				<h3>Lorem ipsum dolor sit amet</h3>
-  				<p>
-  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis sed orci eleifend pulvinar id vitae leo. Aliquam pellentesque, lacus in fringilla dignissim, eros erat faucibus enim...
-  				</p>	
-  			</div>
+          <%=link_to (image_tag(n.book_image.url(:medium))),n %>
+          <h4><%=n.name%></h4>
+          <p>
+            <%=n.description%>
+          </p>
+        </a>
+      </div>
+     <%end%>
+    </div>
+  </div>
 
-  		</div>
-  	</div>
+  <footer id="foot">
+    <div class="container">
+      <hr>
+      <div class="ico_logo">
 
-  	<footer>
-  		<div class="container">
-  			<hr>
-          <%=image_tag("ico_logo.png")%>
-  			<!--img src="images/ico_logo.png" id="ico_logo">-->
-  			<div id="social">
-  				<img src="images/ico_tw.png" id="ico_tw">
-  				<img src="images/ico_google+.png" id="ico_google">
-  				<img src="images/ico_fb.png" id="ico_fb">
-  			</div>
-  		</div>
-  	</footer>
+                <%= image_tag ("ico_logo.png") %>
+        <p>
+          LinkUp Studio<br>
+          all rights reserved
+        </p>
+      </div>
+      <div id="social">
+
+                  <%= image_tag ("ico_tw.png") %>
+
+                  <%= image_tag ("ico_google.png") %>
+
+                  <%= image_tag ("ico_fb.png") %>
+      </div>
+    </div>
+  </footer>
 </div> 
 </body>
 </html>

@@ -1,0 +1,12 @@
+<%= form_for([@book, @book.reviews.build]) do |f| %>
+    <p>
+      <%= f.text_area :comment ,:class=>"nameInput"%>
+    </p>
+    <p>
+      <%= f.text_area :rating %>
+    </p>
+
+    <p>
+      <%= f.submit 'Add a comment'%>
+    </p>
+<% end %>
