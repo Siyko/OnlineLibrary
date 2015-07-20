@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def create
-    @book = Book.find_by(params[:id])
+    @book = Book.find_by(id: params[:book_id])
     @review = @book.reviews.new(review_params)
     @review.user_id = current_user.id
     @review.save
@@ -31,8 +31,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @book = Book.find_by(params[:id])
-    @review = @book.review.find(params[:id])
+    @book = Book.find_by_id(params[:id])
+    @review = @book.review.find_by_id(params[:id])
     if @review.user_id == current_user.id
       @review.destroy
 =begin

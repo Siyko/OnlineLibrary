@@ -1,17 +1,49 @@
-<h3>Book</h3>
-<p>
-  <strong>  Name:</strong>
-  <%= @book.name %>
-</p>
-<p>
-  <strong> Description:</strong>
-  <%= @book.description %>
-</p>
-<% if @book.reviews.empty? %>
-    <i>No comments</i>
-<% else %>
-    <i>Comments:</i>
-    <%= render @book.reviews %>
-<% end %>
-
+<div class="container">
+  <div class="one-book">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+           <%= image_tag (@book.book_image.url(:medium)) %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <h3 class="h3"><%=@book.name %></h3>
+            <p>
+              <span>Author: </span><%=@book.author.name + ' ' + @book.author.surname %><br>
+              <span>Genre: </span><%@book.genres.each do |g|%><%=g.name + ' ' %><%end%><br>
+              <span>Edition: </span><%=@book.publication %><br>
+              <span>Year: </span><%=@book.year %><br>
+              <span>Number of downloads: </span><%=@book.download_count %><br>
+              <span>Rating: </span><%=@book.book_rating %><br>
+            </p>
+          </div>
+        </div>
+        <div class=col-md-2>
+          <div class="row">
+            <input type="button" class="btn btn-primary col-md-12" value="Download"><br>
+            <input type="button" class="btn btn-success col-md-12" value="Add to favorites">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              <%=@book.description%>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <% if @book.reviews.empty? %>
+            <i>No comments</i>
+        <% else %>
+            <i>Comments:</i>
+            <%= render @book.reviews %>
+        <% end %>
+        <div class="row">
 <%= render 'reviews/form' %>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>

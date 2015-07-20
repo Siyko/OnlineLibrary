@@ -1,12 +1,12 @@
-<%= form_for([@book, @book.reviews.build]) do |f| %>
-    <p>
-      <%= f.text_area :comment ,:class=>"nameInput"%>
-    </p>
-    <p>
-      <%= f.text_area :rating %>
-    </p>
 
+<%= form_for([@book, @book.reviews.build], :html=>{:class=>'col-md-12'}) do |f| %>
     <p>
-      <%= f.submit 'Add a comment'%>
+      <%= f.text_area :comment, :class=>'area'%>
+    </p>
+    <p>
+      <%= f.text_area :rating, :class=>'count', :value=>'0' %>
+    </p>
+    <p>
+      <%= f.submit 'Add a comment', :class=>'btn btn-success'%>
     </p>
 <% end %>

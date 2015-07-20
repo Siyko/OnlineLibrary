@@ -1,14 +1,6 @@
-<h1>asdas</h1>
-<%=@books.each do |b|%>
-    <%b.name%>
 
-<div>
-  <% if b.reviews.empty? %>
-      <i>No comments</i>
-  <% else %>
-      <i>Comments:</i>
-      <%= render b.reviews %>
-  <% end %>
-  <%= render 'reviews/form' %>
-</div>
+<%@books.each do |b|%>
+    <%=b.name%>
+    <%=link_to image_tag(b.book_image.url(:medium)),b%>
+
 <%end%>

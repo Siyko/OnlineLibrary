@@ -38,7 +38,7 @@
                 <%else%>
                     <div class="item">
                 <%end%>
-              <%=image_tag(p.book_image.url(:original)) %>
+              <%=link_to (image_tag(p.book_image.url(:original))),p%>
 
               <div class="carousel-caption slide-item">
                 <h3><%=p.name%></h3>

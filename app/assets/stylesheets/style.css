@@ -178,11 +178,11 @@ hr{
     /*margin: 0 auto;*/
     height: 475px;
 }
-/*
+
 .book img{
 	width: 100%;
 }
-*/
+
 .book p,
 .book h4{
     width: 320px;
@@ -270,4 +270,38 @@ hr{
 .regForm img,
 .logForm img{
     vertical-align: middle;
+}
+/****************************************************************************************************************/
+/**********  BOOK *************/
+
+.one-book{
+    height: 100%;
+}
+
+.one-book img{
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.one-book input{
+    margin-bottom: 20px;
+}
+
+.one-book h3{
+    margin-top: 0;
+}
+
+/********************* Textarea  *************************/
+
+.area{
+    border: 1px solid #b9baba;
+    width: 40%;
+    padding: 10px;
+}
+
+.count{
+    border: 1px solid #b9baba;
+    width: 10%;
+    padding: 0 10px;
 }

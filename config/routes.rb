@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   resources :users
   resources :books do
     resources :reviews
-  end
+end
   root "home#index"
   #get 'books' => 'books#show'
   # Example of regular route:

@@ -3,7 +3,11 @@ class BooksController < ApplicationController
     @books = Book.all
   end
   def show
-    @book=Book.find(params[:id])
+    @book = Book.find_by(id: params[:id])
+    if !@book.present?
+      redirect_to root_path
+    end
+
   end
   def create
     @book = Book.new(book_params)
